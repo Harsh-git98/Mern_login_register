@@ -19,7 +19,7 @@ function Login() {
             .then(result => {
                 
                 if (result.data === "Success") {
-                    login(true); // set authenticated state
+                    login(); // set authenticated state
 
                     navigate('/home');
                 }

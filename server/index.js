@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // Use environment variable for MongoDB URI
-const mongoURI = "mongodb://127.0.0.1:27017/employee";
+const mongoURI = "mongodb+srv://shriharshranjangupta:vFkTGymCLtzFmyGr@employee1.fnmjdni.mongodb.net/?retryWrites=true&w=majority&appName=Employee1";
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected to MongoDB"))

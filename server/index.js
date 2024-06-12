@@ -33,7 +33,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.error("Failed to connect to MongoDB", err));
 
-app.post("/login", (req, res) => {
+app.post("/login1", (req, res) => {
     const { email, password } = req.body;
 
 
@@ -58,7 +58,7 @@ app.post("/login", (req, res) => {
         .catch(err => res.json({ error: "Internal Serbbber Error" }));
 })
 
-app.post('/register',(req,res)=>{
+app.post('/register1',(req,res)=>{
 
     EmployeeModel.create(req.body)
     .then(employees => res.json(employees))

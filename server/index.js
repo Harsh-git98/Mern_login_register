@@ -5,13 +5,29 @@ const bcrypt = require('bcrypt');
 const EmployeeModel = require('./models/Employee.js');
 require('dotenv').config(); // To use environment variables
 
+
+const path =require( 'path');
+const { fileURLToPath } = require('url');
+
+
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
+
+
+console.log(__dirname);
+// client
+
+app.use(express.static(path.join(__dirname,'/client/dist')))
+app.get('*',(req,res)=>res.sendFile(path.join(__dirname,'/client/dist/index.html')));
+
+
 // Use environment variable for MongoDB URI
-const mongoURI = "mongodb+srv://shriharshranjangupta:vFkTGymCLtzFmyGr@employee1.fnmjdni.mongodb.net/?retryWrites=true&w=majority&appName=Employee1";
+
+const mongoURI = process.env.PASSWORDING;
+console.log(`MongoDB URI: ${process.env.PASSWORDING}`);
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected to MongoDB"))

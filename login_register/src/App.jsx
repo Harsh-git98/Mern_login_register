@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './Signup.jsx';
-import {BrowserRouter, Route,Routes} from 'react-router-dom';
+import {BrowserRouter, Route,Routes,Navigate} from 'react-router-dom';
 import Login from './Login.jsx';
 import Home from './Home.jsx';
 
@@ -17,6 +17,7 @@ function App() {
       <BrowserRouter> 
        <Routes>
 
+        <Route path ='/' element={<Navigate to='/register' />}></Route>
         <Route path ='/register' element={<Signup/>}></Route>
         <Route path ='/login' element={<Login/>}></Route>
         <Route path ='/home' element={<Home/>}></Route>

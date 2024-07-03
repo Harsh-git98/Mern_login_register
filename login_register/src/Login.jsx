@@ -35,7 +35,17 @@ function Login() {
     };
 
     return (
+       
         <div style={styles.container}>
+             <flexDirection:column>
+            <div style={styles.default}>
+                <h3 style={styles.label1}>DEFAULTS</h3>
+                <p style={styles.label1}>&#x1F194; login@gmail.com</p>
+                <p style={styles.label1}>&#x1F511; hello</p>
+
+            </div>
+
+           
             <div style={styles.signupForm}>
                 <h2 className="text-center mb-4" style={styles.h2}>Login</h2>
                 <form onSubmit={handleSubmit}>
@@ -53,11 +63,26 @@ function Login() {
                 <label style={styles.labels}>Don't have an account?</label>
                 <Link to="/register" className="btn" style={styles.buttons}>Signup</Link>
             </div>
+            </flexDirection:column>
         </div>
     );
 }
 
 const styles = {
+    default:{
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        marginBottom:'50px',
+        backgroundColor:'white',
+        border:'4px solid #6e2efb',
+        borderRadius:'10px',
+        color:'black',
+
+
+
+    },
+
     container: {
         display: 'flex',
         justifyContent: 'center',
@@ -78,6 +103,13 @@ const styles = {
     label: {
         fontWeight: 'bold',
         color: '#6e2efb',
+    },
+    label1: {
+        fontWeight: 'bold',
+        fontFamily:'',
+        color: '#6e8efb',
+        padding:'1px',
+
     },
     input: {
         borderRadius: '5px',
